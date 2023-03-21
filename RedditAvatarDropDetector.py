@@ -38,6 +38,7 @@ password_input = driver.find_element(By.NAME, 'password')
 password_input.send_keys(os.environ['REDDIT_PASSWORD'])
 
 login_button = driver.find_element(By.CSS_SELECTOR, '.AnimatedForm__submitButton.m-full-width.m-modalUpdate ')
+wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "._1DK52RbaamLOWw5UPaht_S._3Ig_EsWWVLquWs2yBBQjec._1acwN_tUhJ8w-n7oCp-Aw3")))
 login_button.click()
 
 driver.switch_to.default_content()
@@ -73,6 +74,7 @@ while True:
                 except:
                     make_twilio_call()
                     print("AVATARS MIGHT HAVE DROPPED!")
+                    break;
     except:
         make_twilio_call()
         break;
