@@ -80,3 +80,5 @@ while True:
     except:
         make_twilio_call()
         break;
+    finally:
+        driver.quit()
