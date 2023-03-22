@@ -76,7 +76,9 @@ while True:
                 except:
                     make_twilio_call()
                     print("AVATARS MIGHT HAVE DROPPED!")
-                    driver.quit()
+                    break
     except:
         make_twilio_call()
-        driver.quit()
+        break
+
+driver.quit()
