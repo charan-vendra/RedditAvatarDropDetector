@@ -64,12 +64,14 @@ while True:
             if (old_page_contents == browse_all_content.get_attribute("outerHTML")):
                 print("Nothing changed.")
                 close_button = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "._closeButton_1ujsh_1._closeBtn_1upjl_56")))
+                wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "._1DK52RbaamLOWw5UPaht_S._3Ig_EsWWVLquWs2yBBQjec._1acwN_tUhJ8w-n7oCp-Aw3")))
                 close_button.click()
             else:
                 try:
                     running_snoo = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "._title_14e8h_10._emptyTitle_14e8h_29")))
                     if (running_snoo.text == "These collectibles sure go fast"):
                         close_button = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "._closeButton_1ujsh_1._closeBtn_1upjl_56")))
+                        wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "._1DK52RbaamLOWw5UPaht_S._3Ig_EsWWVLquWs2yBBQjec._1acwN_tUhJ8w-n7oCp-Aw3")))
                         close_button.click()
                 except:
                     make_twilio_call()
@@ -78,6 +80,3 @@ while True:
     except:
         make_twilio_call()
         break;
-
-
-input('Press Enter to close the browser...')
