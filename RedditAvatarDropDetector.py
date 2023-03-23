@@ -19,7 +19,10 @@ def make_twilio_call():
         from_='+15077044568'
         )
 
-driver = webdriver.Chrome('chromedriver.exe')
+options = webdriver.ChromeOptions()
+options.add_argument('--use-gl=angle')
+
+driver = webdriver.Chrome('chromedriver.exe', options=options)
 driver.get('https://www.reddit.com/user/wanomy')
 
 wait = WebDriverWait(driver, 60)
@@ -43,7 +46,10 @@ login_button.click()
 
 driver.switch_to.default_content()
 
-wait.until_not(EC.presence_of_element_located((By.CSS_SELECTOR, "._3-lF5kPDkSGfnVUW_GtvUV.icon.icon-user")))
+try:
+    wait.until_not(EC.presence_of_element_located((By.CSS_SELECTOR, "._3-lF5kPDkSGfnVUW_GtvUV.icon.icon-user")))
+except:
+    driver.quit()
 
 while True:
     try:
