@@ -6,6 +6,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from twilio.rest import Client
 from dotenv import load_dotenv
+from selenium.webdriver.chrome.service import Service
 
 load_dotenv()
 
@@ -26,7 +27,9 @@ options.add_argument(r'--user-data-dir=C:\Users\Charan\AppData\Local\Google\Chro
 options.add_argument(r'--profile-directory=Default')
 options.add_argument('start-maximized')
 
-driver = webdriver.Chrome('chromedriver.exe', options=options)
+s = Service('chromedriver.exe')
+
+driver = webdriver.Chrome(service=s, options=options)
 driver.get('https://www.reddit.com/avatar/shop/gallery?utm_medium=web2x&utm_source=share')
 
 wait = WebDriverWait(driver, 60)
