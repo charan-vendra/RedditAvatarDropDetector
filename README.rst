@@ -3,7 +3,7 @@ RedditAvatarDropDetector
 
 This piece of code keeps refreshing the Avatars Page on Reddit and Notifies you as soon as it detects the Drop.
 
-I am updating this README to help you set up the project more easily.
+Let me know if you want me to update this README to help you set up the project more easily.
 
 Please consider donating or subscribing if you like this project as I am
 also working on a YouTube channel to teach people that have language
