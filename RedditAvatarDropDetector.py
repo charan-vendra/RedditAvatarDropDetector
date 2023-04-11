@@ -16,7 +16,7 @@ def make_twilio_call():
 
     call = client.calls.create(
         twiml='<Response><Say>Nothing Changed Dont Worry!</Say></Response>',
-        to='+919392062662',
+        to=os.environ['MY_NUM'],
         from_='+15077044568'
         )
 
